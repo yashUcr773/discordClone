@@ -1,6 +1,7 @@
 import { initialProfile } from "@/lib/initialProfile"
 import { prisma } from '@/lib/db'
 import { redirect } from "next/navigation"
+import InitialModal from "@/components/modals/InitialModal"
 
 export default async function SetupPage() {
 
@@ -20,6 +21,6 @@ export default async function SetupPage() {
     }
 
     return (
-        <div>Create a server</div>
+        <InitialModal></InitialModal>
     )
 }
