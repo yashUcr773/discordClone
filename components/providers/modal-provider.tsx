@@ -8,6 +8,8 @@ import ManageMembersModal from "../modals/manageMembersModal"
 import CreateChannelModal from "../modals/createChannelModal"
 import LeaveServerModal from "../modals/leaveServerModal"
 import DeleteServerModal from "../modals/deleteServerModal"
+import DeleteChannelModal from "../modals/deleteChannelModal"
+import EditChannelModal from "../modals/editChannelModal"
 
 export const ModalProvider = () => {
 
@@ -20,10 +22,12 @@ export const ModalProvider = () => {
     if (!isMounted) {
         return null
     }
-    
+
     return (
         <>
+            <EditChannelModal></EditChannelModal>
             <DeleteServerModal></DeleteServerModal>
+            <DeleteChannelModal></DeleteChannelModal>
             <LeaveServerModal></LeaveServerModal>
             <CreateChannelModal></CreateChannelModal>
             <ManageMembersModal></ManageMembersModal>
