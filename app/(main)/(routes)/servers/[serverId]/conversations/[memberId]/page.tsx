@@ -28,7 +28,7 @@ export default async function MemberIdPage({ params, searchParams }: MemberIdPag
 
     const currentMember = await prisma.member.findFirst({
         where: {
-            serverId: params.serverId,
+            serverId: params?.serverId,
             profileId: profile.id
         },
         include: {
@@ -40,10 +40,10 @@ export default async function MemberIdPage({ params, searchParams }: MemberIdPag
         return redirect("/")
     }
 
-    const conversation = await getOrCreateConversation(currentMember.id, params.memberId)
+    const conversation = await getOrCreateConversation(currentMember.id, params?.memberId)
 
     if (!conversation) {
-        return redirect(`/servers/${params.serverId}`)
+        return redirect(`/servers/${params?.serverId}`)
     }
 
     const { memberOne, memberTwo } = conversation;
@@ -54,7 +54,7 @@ export default async function MemberIdPage({ params, searchParams }: MemberIdPag
 
     return (
         <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
-            <ChatHeader imageUrl={otherMember.profile.imageUrl} name={otherMember.profile.name} serverId={params.serverId} type={'conversation'}></ChatHeader>
+            <ChatHeader imageUrl={otherMember.profile.imageUrl} name={otherMember.profile.name} serverId={params?.serverId} type={'conversation'}></ChatHeader>
 
             {!searchParams.video && (
                 <>

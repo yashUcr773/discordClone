@@ -18,7 +18,7 @@ export default async function ServerIdPage({ params }: ServerIdPageProps) {
 
     const server = await prisma.server.findUnique({
         where: {
-            id: params.serverId,
+            id: params?.serverId,
             members: {
                 some: {
                     profileId: profile?.id
@@ -44,5 +44,5 @@ export default async function ServerIdPage({ params }: ServerIdPageProps) {
         return null
     }
 
-    return redirect(`/servers/${params.serverId}/channels/${initialChannel.id}`)
+    return redirect(`/servers/${params?.serverId}/channels/${initialChannel.id}`)
 }

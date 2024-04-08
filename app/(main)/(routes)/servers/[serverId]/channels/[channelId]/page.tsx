@@ -25,13 +25,13 @@ export default async function ChannelIdPage({ params }: ChannelIdPageProps) {
 
     const channel = await prisma.channel.findUnique({
         where: {
-            id: params.channelId
+            id: params?.channelId
         }
     })
 
     const member = await prisma.member.findFirst({
         where: {
-            serverId: params.serverId,
+            serverId: params?.serverId,
             profileId: profile.id
         }
     })

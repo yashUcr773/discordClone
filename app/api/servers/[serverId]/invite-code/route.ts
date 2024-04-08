@@ -14,13 +14,13 @@ export async function PATCH(req: Request, { params }: { params: { serverId: stri
             return new NextResponse('Unauthorized', { status: 401 })
         }
 
-        if (!params.serverId) {
+        if (!params?.serverId) {
             return new NextResponse('Server Id Missing', { status: 400 })
         }
 
         const server = await prisma.server.update({
             where: {
-                id: params.serverId,
+                id: params?.serverId,
                 profileId: profile.id
             },
             data: {

@@ -57,7 +57,7 @@ export default function CreateChannelModal() {
             const url = queryString.stringifyUrl({
                 url: "/api/channels",
                 query: {
-                    serverId: params.serverId
+                    serverId: params?.serverId
                 }
             })
 

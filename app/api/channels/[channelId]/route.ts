@@ -20,7 +20,7 @@ export async function DELETE(req: Request, { params }: { params: { channelId: st
             return new NextResponse('Server Id Missing', { status: 400 })
         }
 
-        if (!params.channelId) {
+        if (!params?.channelId) {
             return new NextResponse('Channel Id Missing', { status: 400 })
         }
 
@@ -39,7 +39,7 @@ export async function DELETE(req: Request, { params }: { params: { channelId: st
             data: {
                 channels: {
                     delete: {
-                        id: params.channelId,
+                        id: params?.channelId,
                         name: {
                             not: 'general'
                         }
@@ -74,7 +74,7 @@ export async function PATCH(req: Request, { params }: { params: { channelId: str
             return new NextResponse('Server Id Missing', { status: 400 })
         }
 
-        if (!params.channelId) {
+        if (!params?.channelId) {
             return new NextResponse('Channel Id Missing', { status: 400 })
         }
 
@@ -98,7 +98,7 @@ export async function PATCH(req: Request, { params }: { params: { channelId: str
                 channels: {
                     update: {
                         where: {
-                            id: params.channelId,
+                            id: params?.channelId,
                             NOT: {
                                 name: 'general'
                             },

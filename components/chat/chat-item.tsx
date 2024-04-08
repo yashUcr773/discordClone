@@ -90,7 +90,7 @@ export default function ChatItem({ content, currentMember, deleted, fileUrl, id,
         form.reset({
             content: content
         })
-    }, [content])
+    }, [form, content])
 
     const isLoading = form.formState.isSubmitting
 

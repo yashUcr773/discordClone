@@ -20,7 +20,7 @@ export default async function ServerIdLayout({ children, params }: ServerIdLayou
 
     const server = await prisma.server.findUnique({
         where: {
-            id: params.serverId,
+            id: params?.serverId,
             members: {
                 some: {
                     profileId: profile.id
@@ -36,7 +36,7 @@ export default async function ServerIdLayout({ children, params }: ServerIdLayou
     return (
         <div className="h-full">
             <div className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
-                <ServerSidebar serverId={params.serverId}></ServerSidebar>
+                <ServerSidebar serverId={params?.serverId}></ServerSidebar>
             </div>
             <main className="h-full md:pl-60">
                 {children}
