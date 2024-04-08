@@ -73,12 +73,12 @@ export default function ManageMembersModal() {
 
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose}>
-            <DialogContent className="bg-gray-200 text-black border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 border overflow-hidden w-11/12 rounded-lg">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
                         Manage Members
                     </DialogTitle>
-                    <DialogDescription className="text-center text-zinc-500">
+                    <DialogDescription className="text-center text-zinc-200">
                         {server?.members?.length} members
                     </DialogDescription>
                 </DialogHeader>
@@ -87,11 +87,11 @@ export default function ManageMembersModal() {
                         <div key={member.id} className="flex items-center gap-x-2 mb-6">
                             <UserAvatar src={member.profile.imageUrl}></UserAvatar>
                             <div className="flex flex-col gap-y-1">
-                                <div className="text-xs font-semiboldflex flex items-center gap-x-1">
+                                <div className="text-base font-semiboldflex flex items-center gap-x-1">
                                     {member.profile.name}
                                     {roleIconMap[member.role]}
                                 </div>
-                                <p className="text-xs text-zinc-500">
+                                <p className="text-base text-zinc-400/90">
                                     {member.profile.email}
                                 </p>
                             </div>

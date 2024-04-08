@@ -76,10 +76,10 @@ export default function EditChannelModal() {
         form.reset();
         onClose()
     }
-
+     
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose}>
-            <DialogContent className="bg-gray-200 text-black p-0 border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 p-0 border overflow-hidden w-11/12 rounded-lg">
 
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
@@ -92,9 +92,9 @@ export default function EditChannelModal() {
                         <div className="space-y-8 px-6">
                             <FormField control={form.control} name="name" render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="uppercase test-xs font-bold text-zinc-500 dark:text-secondary/70">Channel Name</FormLabel>
+                                    <FormLabel className="uppercase text-base font-bold">Channel Name</FormLabel>
                                     <FormControl>
-                                        <Input disabled={isLoading} className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0" placeholder="Enter channel name" {...field}></Input>
+                                        <Input disabled={isLoading} className="bg-zinc-400/50 dark:bg-zinc-600/50 border-0 focus-visible:ring-0  focus-visible:ring-offset-0" placeholder="Enter channel name" {...field}></Input>
                                     </FormControl>
                                     <FormMessage></FormMessage>
                                 </FormItem>
@@ -104,7 +104,7 @@ export default function EditChannelModal() {
                                     <FormLabel>Channel Type</FormLabel>
                                     <Select disabled={isLoading} onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none">
+                                            <SelectTrigger className="bg-zinc-400/50 dark:bg-zinc-600/50 border-0 focus:ring-0 ring-offset-0 focus:ring-offset-0 capitalize outline-none">
 
                                                 <SelectValue placeholder="Select a channel type"></SelectValue>
                                             </SelectTrigger>
@@ -121,7 +121,7 @@ export default function EditChannelModal() {
 
                             </FormField>
                         </div>
-                        <DialogFooter className="bg-gray-100 px-6 py-4">
+                        <DialogFooter className="px-6 py-4">
                             <Button disabled={isLoading} variant={'primary'}>
                                 Update
                             </Button>

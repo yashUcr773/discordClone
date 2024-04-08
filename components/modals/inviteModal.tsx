@@ -49,18 +49,18 @@ export default function InviteModal() {
 
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose}>
-            <DialogContent className="bg-gray-200 text-black p-0 border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 p-0 border overflow-hidden w-11/12 rounded-lg">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
                         Invite your friends
                     </DialogTitle>
                 </DialogHeader>
                 <div className="p-6">
-                    <Label className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
+                    <Label className="uppercase text-base font-bold  ">
                         Server Invite Link
                     </Label>
                     <div className="flex items-center mt-2 gap-x-2">
-                        <Input disabled={isLoading} className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
+                        <Input disabled={isLoading} className="bg-zinc-400/50 dark:bg-zinc-600/50 border-0 focus-visible:ring-0  focus-visible:ring-offset-0"
                             value={inviteUrl}>
                         </Input>
                         <Button size={'icon'} className="bg-gray-200" onClick={onCopy} disabled={isLoading}>
@@ -70,7 +70,7 @@ export default function InviteModal() {
                             }
                         </Button>
                     </div>
-                    <Button variant={'link'} size={'sm'} className="text-xs text-zinc-500 mt-4" disabled={isLoading} onClick={onNew}>
+                    <Button variant={'link'} size={'sm'} className="text-base  mt-4" disabled={isLoading} onClick={onNew}>
                         Generate a new link
                         <RefreshCw className="w-4 h-4 ml-2"></RefreshCw>
                     </Button>

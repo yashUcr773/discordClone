@@ -70,12 +70,12 @@ export default function InitialModal() {
 
     return (
         <Dialog open>
-            <DialogContent className="bg-gray-200 text-black p-0 border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 p-0 border overflow-hidden w-11/12 rounded-lg">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
                         Customize your server
                     </DialogTitle>
-                    <DialogDescription className="text-center text-zinc-500">
+                    <DialogDescription className="text-center text-zinc-200">
                         Give your server a personality with a name and an image. You can always change it later.
                     </DialogDescription>
                 </DialogHeader>
@@ -94,15 +94,15 @@ export default function InitialModal() {
                             </div>
                             <FormField control={form.control} name="name" render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="uppercase test-xs font-bold text-zinc-500 dark:text-secondary/70">Server Name</FormLabel>
+                                    <FormLabel className="uppercase text-base font-bold">Server Name</FormLabel>
                                     <FormControl>
-                                        <Input disabled={isLoading} className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0" placeholder="Enter server name" {...field}></Input>
+                                        <Input disabled={isLoading} className="bg-zinc-400/50 dark:bg-zinc-600/50 border-0 focus-visible:ring-0  focus-visible:ring-offset-0" placeholder="Enter server name" {...field}></Input>
                                     </FormControl>
                                     <FormMessage></FormMessage>
                                 </FormItem>
                             )}></FormField>
                         </div>
-                        <DialogFooter className="bg-gray-100 px-6 py-4">
+                        <DialogFooter className="px-6 py-4">
                             <Button disabled={isLoading} variant={'primary'}>
                                 Create
                             </Button>

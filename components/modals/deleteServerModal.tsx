@@ -36,19 +36,19 @@ export default function DeleteServerModal() {
 
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose}>
-            <DialogContent className="bg-gray-200 text-black p-0 border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 p-0 border overflow-hidden w-11/12 rounded-lg">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
                         Delete Server
                     </DialogTitle>
-                    <DialogDescription className="text-center text-zinc-500">
+                    <DialogDescription className="text-center text-zinc-200">
                         Are you sure you want to do this?
                         <br></br>
                         <span className="font-semibold text-indigo-500">{server?.name}</span> will be permanently deleted.
                     </DialogDescription>
                 </DialogHeader>
 
-                <DialogFooter className="bg-gray-100 px-6 py-4 ">
+                <DialogFooter className=" px-6 py-4 ">
                     <div className="flex items-center justify-between w-full">
                         <Button disabled={isLoading} onClick={() => onClose()} variant={'ghost'}>
                             Cancel

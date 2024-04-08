@@ -43,11 +43,20 @@ export default function FileUpload({ endpoint, onChange, value }: FileUploadProp
 
 
     return (
-        <UploadDropzone endpoint={endpoint} onClientUploadComplete={(res) => {
-            onChange(res?.[0].url)
-        }}
+        <UploadDropzone config={{ mode: 'auto' }} endpoint={endpoint}
+            onClientUploadComplete={(res) => {
+                onChange(res?.[0].url)
+            }}
             onUploadError={(error: Error) => {
                 console.log(error)
+            }}
+            appearance={{
+                container: {
+                    border: '1px solid white'
+                },
+                allowedContent: {
+                    color: 'white'
+                }
             }}>
 
         </UploadDropzone>

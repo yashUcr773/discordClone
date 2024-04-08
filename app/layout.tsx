@@ -11,8 +11,8 @@ import QueryProvider from "@/components/providers/query-provider";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Discord",
-    description: "Discord clone",
+    title: "DiscordClone | Your Place to Talk and Hang Out",
+    description: "Discord is the easiest way to talk over voice, video, and text. Talk, chat, hang out, and stay close with your friends and communities.",
 };
 
 export default function RootLayout({

@@ -15,7 +15,6 @@ interface ServerChannelProps {
 
 const iconMap = {
     [ChannelType.TEXT]: <Hash className="flex shrink-0 w-5 h-5 text-zinc-500 dark:text-zinc-400"></Hash>,
-    [ChannelType.AUDIO]: <Mic className="flex shrink-0 w-5 h-5 text-zinc-500 dark:text-zinc-400"></Mic>,
     [ChannelType.VIDEO]: <Video className="flex shrink-0 w-5 h-5 text-zinc-500 dark:text-zinc-400"></Video>
 }
 

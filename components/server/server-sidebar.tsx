@@ -18,7 +18,6 @@ interface ServerSidebarProps {
 
 const iconMap = {
     [ChannelType.TEXT]: <Hash className="w-4 h-4 mr-2"></Hash>,
-    [ChannelType.AUDIO]: <Mic className="w-4 h-4 mr-2"></Mic>,
     [ChannelType.VIDEO]: <Video className="w-4 h-4 mr-2"></Video>
 }
 
@@ -62,7 +61,6 @@ export default async function ServerSidebar({ serverId }: ServerSidebarProps) {
     }
 
     const textChannels = server?.channels.filter(channel => channel.type === ChannelType.TEXT)
-    const audioChannels = server?.channels.filter(channel => channel.type === ChannelType.AUDIO)
     const videoChannels = server?.channels.filter(channel => channel.type === ChannelType.VIDEO)
 
     const members = server?.members.filter(member => member.profileId !== profile.id)
@@ -82,15 +80,6 @@ export default async function ServerSidebar({ serverId }: ServerSidebarProps) {
                             label: 'Text Channels',
                             type: 'channel',
                             data: textChannels.map((channel) => ({
-                                id: channel.id,
-                                name: channel.name,
-                                icon: iconMap[channel.type]
-                            }))
-                        },
-                        {
-                            label: 'Voice Channels',
-                            type: 'channel',
-                            data: audioChannels.map((channel) => ({
                                 id: channel.id,
                                 name: channel.name,
                                 icon: iconMap[channel.type]
@@ -127,18 +116,6 @@ export default async function ServerSidebar({ serverId }: ServerSidebarProps) {
 
                 <div className="space-y-[2px]">
                     {textChannels.map((channel) => (
-                        <ServerChannel key={channel.id} channel={channel} server={server} role={role}></ServerChannel>
-                    ))}
-                </div>
-
-                {!!audioChannels?.length && (
-                    <div className="mb-2">
-                        <ServerSection sectionType="channels" channelType={ChannelType.AUDIO} role={role} label={'Audio Channels'} ></ServerSection>
-                    </div>
-                )}
-
-                <div className="space-y-[2px]">
-                    {audioChannels.map((channel) => (
                         <ServerChannel key={channel.id} channel={channel} server={server} role={role}></ServerChannel>
                     ))}
                 </div>

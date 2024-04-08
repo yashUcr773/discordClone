@@ -71,12 +71,12 @@ export default function MessageFileModal() {
 
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose}>
-            <DialogContent className="bg-gray-200 text-black p-0 border overflow-hidden w-11/12 rounded-lg">
+            <DialogContent className="dark:bg-[#1E1F22] bg-[#E3E5E8] text-black dark:text-zinc-300 p-0 border overflow-hidden w-11/12 rounded-lg">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
                         Add an Attachment
                     </DialogTitle>
-                    <DialogDescription className="text-center text-zinc-500">
+                    <DialogDescription className="text-center text-zinc-200">
                         Send a file as message
                     </DialogDescription>
                 </DialogHeader>
@@ -94,7 +94,7 @@ export default function MessageFileModal() {
                                 )}></FormField>
                             </div>
                         </div>
-                        <DialogFooter className="bg-gray-100 px-6 py-4">
+                        <DialogFooter className="px-6 py-4">
                             <Button disabled={isLoading} variant={'primary'}>
                                 Send
                             </Button>
