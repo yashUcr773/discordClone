@@ -1,4 +1,4 @@
-# SwiftChat App
+# DiscordClone App
 
 Demo - [discordClone.uk](https://discordclone.uk/)
 
