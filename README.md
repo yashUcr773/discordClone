@@ -2,6 +2,11 @@
 
 Demo - [discordClone.uk](https://discordclone.uk/)
 
+Test Account
+- Email - demouser@mailsac.com
+- Password - demo_user_1
+- Username - demouser1
+
 ## Introduction
 The Discord Clone project aims to replicate the functionality of the popular communication platform Discord. It allows users to create servers, channels, engage in text and voice chats, make video calls, and manage roles. 
 
