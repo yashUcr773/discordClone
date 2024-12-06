@@ -73,6 +73,6 @@ The Discord Clone application relies on the following environment variables. Ens
 - [x] Audio / video Calls
 - [x] Add real time using socket-io
 - [] Channels and servers
-
+- [] Sonar Integration
 
 Feel free to contribute and enhance the project!
